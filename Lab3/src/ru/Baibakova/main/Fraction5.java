@@ -1,5 +1,4 @@
 package ru.Baibakova.main;
-//Убрали абстрактность класса и забили на наследование из-за этого, так что больше нет класса SimpleFracrion
 
 public class Fraction5 extends Number {
     private final int numerator;
