@@ -1,7 +1,7 @@
 package ru.Baibakova.main;
-import java.util.Arrays;
 import java.util.Scanner;
 import ru.Baibakova.fraction.Fraction;
+import ru.Baibakova.fraction.Fraction3;
 import ru.Baibakova.fraction.Fraction4;
 import ru.Baibakova.fraction.SimpleFraction;
 
@@ -10,48 +10,32 @@ import static ru.Baibakova.main.Degree.calculateDegree;
 public class Main {
     public static void main(String[] args) {
         //Задача 1.4 Дроби, добавили final
-        // Проверка создания дробей и корректного сокращения
-        System.out.println("Задача 1.4 Сложение дробей \n");
-        Fraction fraction1 = new Fraction(2, 4);
-        Fraction fraction2 = new Fraction(3, 9);
-        System.out.println("fraction1 (должна быть 1/2): " + fraction1);
-        System.out.println("fraction2 (должна быть 1/3): " + fraction2);
+        // Создание объектов Fraction
+        Fraction fraction1 = new Fraction(3, 4);
+        Fraction fraction2 = new Fraction(5, 6);
 
-        // Проверка сложения дробей
+        // Демонстрация работы геттеров
+        System.out.println("Fraction 1: " + fraction1);
+        System.out.println("Numerator of Fraction 1: " + fraction1.getNumerator());
+        System.out.println("Denominator of Fraction 1: " + fraction1.getDenominator());
+
+        // Демонстрация арифметических операций
         Fraction sum = fraction1.add(fraction2);
-        System.out.println("Сумма 1/2 + 1/3 (должна быть 5/6): " + sum);
+        System.out.println("Sum: " + sum);
 
-        // Проверка вычитания дробей
         Fraction difference = fraction1.subtract(fraction2);
-        System.out.println("Разность 1/2 - 1/3 (должна быть 1/6): " + difference);
+        System.out.println("Difference: " + difference);
 
-        // Проверка умножения дробей
         Fraction product = fraction1.multiply(fraction2);
-        System.out.println("Произведение 1/2 * 1/3 (должно быть 1/6): " + product);
+        System.out.println("Product: " + product);
 
-        // Проверка деления дробей
         Fraction quotient = fraction1.divide(fraction2);
-        System.out.println("Частное 1/2 / 1/3 (должно быть 3/2): " + quotient);
+        System.out.println("Quotient: " + quotient);
 
-        // Проверка работы с отрицательными значениями
-        Fraction negativeFraction = new Fraction(-2, 4);
-        System.out.println("Отрицательная дробь -2/4 (должна быть -1/2): " + negativeFraction);
-
-        Fraction negativeDenominator = new Fraction(2, -4);
-        System.out.println("Дробь с отрицательным знаменателем 2/-4 (должна быть -1/2): " + negativeDenominator);
-
-        // Проверка работы с целыми числами
-        Fraction addInteger = fraction1.add(1);
-        System.out.println("1/2 + 1 (должно быть 3/2): " + addInteger);
-
-        Fraction subtractInteger = fraction1.subtract(1);
-        System.out.println("1/2 - 1 (должно быть -1/2): " + subtractInteger);
-
-        Fraction multiplyInteger = fraction1.multiply(3);
-        System.out.println("1/2 * 3 (должно быть 3/2): " + multiplyInteger);
-
-        Fraction divideInteger = fraction1.divide(2);
-        System.out.println("1/2 / 2 (должно быть 1/4): " + divideInteger);
+        // Использование сеттеров для изменения значений дроби
+        fraction1.setNumerator(7);
+        fraction1.setDenominator(8);
+        System.out.println("Updated Fraction 1: " + fraction1);
 
         // Проверка ошибки деления на ноль
         try {
@@ -66,7 +50,62 @@ public class Main {
             System.out.println("Ошибка при делении на дробь с нулевым числителем: " + e.getMessage());
         }
 
-        //Задача 3.3 то же самое, что и задача 1.4, поэтому можно будет только изменить везде Fraction на Fraction3
+        //Задача 3.1 то же самое, что и задача 1.4, поэтому можно будет только изменить везде Fraction на Fraction3
+        // Проверка создания дробей и корректного сокращения
+        System.out.println("\n Задача 3.1 Сложение дробей \n");
+        Fraction3 fraction3 = new Fraction3(2, 4);
+        Fraction3 fraction4 = new Fraction3(3, 9);
+        System.out.println("fraction1 (должна быть 1/2): " + fraction3);
+        System.out.println("fraction2 (должна быть 1/3): " + fraction4);
+
+        // Проверка сложения дробей
+        Fraction3 sum1 = fraction3.add(fraction4);
+        System.out.println("Сумма 1/2 + 1/3 (должна быть 5/6): " + sum1);
+
+        // Проверка вычитания дробей
+        Fraction3 difference1 = fraction3.subtract(fraction4);
+        System.out.println("Разность 1/2 - 1/3 (должна быть 1/6): " + difference1);
+
+        // Проверка умножения дробей
+        Fraction3 product1 = fraction3.multiply(fraction4);
+        System.out.println("Произведение 1/2 * 1/3 (должно быть 1/6): " + product1);
+
+        // Проверка деления дробей
+        Fraction3 quotient1 = fraction3.divide(fraction4);
+        System.out.println("Частное 1/2 / 1/3 (должно быть 3/2): " + quotient1);
+
+        // Проверка работы с отрицательными значениями
+        Fraction3 negativeFraction1 = new Fraction3(-2, 4);
+        System.out.println("Отрицательная дробь -2/4 (должна быть -1/2): " + negativeFraction1);
+
+        Fraction3 negativeDenominator1 = new Fraction3(2, -4);
+        System.out.println("Дробь с отрицательным знаменателем 2/-4 (должна быть -1/2): " + negativeDenominator1);
+
+        // Проверка работы с целыми числами
+        Fraction3 addInteger1 = fraction3.add(1);
+        System.out.println("1/2 + 1 (должно быть 3/2): " + addInteger1);
+
+        Fraction3 subtractInteger1 = fraction3.subtract(1);
+        System.out.println("1/2 - 1 (должно быть -1/2): " + subtractInteger1);
+
+        Fraction3 multiplyInteger1 = fraction3.multiply(3);
+        System.out.println("1/2 * 3 (должно быть 3/2): " + multiplyInteger1);
+
+        Fraction3 divideInteger1 = fraction3.divide(2);
+        System.out.println("1/2 / 2 (должно быть 1/4): " + divideInteger1);
+
+        // Проверка ошибки деления на ноль
+        try {
+            Fraction3 zeroDenominator1 = new Fraction3(1, 0);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Ошибка при создании дроби с нулевым знаменателем: " + e.getMessage());
+        }
+
+        try {
+            fraction3.divide(new Fraction3(0, 1));
+        } catch (ArithmeticException e) {
+            System.out.println("Ошибка при делении на дробь с нулевым числителем: " + e.getMessage());
+        }
 
         //Задача 4.2 Fraction4 абстрактный класс, подтип класса Number
         System.out.println("\nЗадача 4.2 Дробь это число \n");
